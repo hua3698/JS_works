@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼</title>
+</head>
+
+<body>
+    <script>
+        //還缺計算次數
+        
+        let n = 0;
+        let x = 99;
+
+        const ans = num(n, x);
+
+        while (true) {
+            const result = prompt(`猜數字${n}~${x}`, "0");
+            if (ans == result) {
+                alert(`right! 答案是${ans}`);
+                break;
+            } 
+            if (result < ans) {
+                alert("不對，再猜");
+                n = result;
+            }
+            if (result > ans) {
+                alert("不對，再猜");
+                x = result;
+            }
+            if (result < n || result > x) alert("不要亂猜");
+            if (result == null) {
+                alert("人生最怕的不是努力了沒結果，而是還沒開始就選擇放棄");
+                break;
+            }
+        }
+
+
+        function num(min, max) {
+            const rd = Math.floor(Math.random() * (max - min + 1)) + min;
+            return rd;
+        }
+
+        // 用迴圈判斷是否猜對
+        // 變數1 random
+        // 變數2 猜的數字，會成為下一次default
+        // 按取消會離開迴圈，公布結果，並判斷是猜對還是離開
+
+
+
+        // 
+    </script>
+</body>
+
+</html>
